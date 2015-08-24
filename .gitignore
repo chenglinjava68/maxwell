@@ -1,0 +1,6 @@
+data/*.yaml
+config/*.yml
+/target
+/config.properties
+/maxwell.position
+/.idea
