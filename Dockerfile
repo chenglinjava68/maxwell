@@ -1,0 +1,13 @@
+FROM docker-registry.zende.sk/zendesk/ruby:2.1.6
+
+RUN apt-get update && apt-get install -y openjdk-7-jre curl
+
+RUN mkdir /app
+WORKDIR /app
+
+RUN curl -sLo - https://github.com/zendesk/maxwell/releases/download/v0.14.2/maxwell-0.14.2.tar.gz | tar zxvf -
+RUN cp -r maxwell-*/* . && rm -rf maxwell-*
+
+ADD REVISION /
+
+CMD bin/maxwell --user=$MYSQL_USERNAME --password=$MYSQL_PASSWORD --host=$MYSQL_HOST --producer=kafka --kafka.bootstrap.servers=$KAFKA_HOST:$KAFKA_PORT
