@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd $(dirname $0)
+git worktree add site gh-pages
+mkdocs build --clean && cp CNAME site
+(cd site && git add . && git commit -m 'update docs' && git push)
+rm -Rf site
+git worktree prune
+
