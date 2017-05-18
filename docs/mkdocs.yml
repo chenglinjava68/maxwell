@@ -1,0 +1,12 @@
+site_name: Maxwell's Daemon
+theme_dir: theme
+pages:
+  - 'Overview': 'index.md'
+  - 'Quick Start': 'quickstart.md'
+  - 'Configuration': 'config.md'
+  - 'Producers': 'producers.md'
+  - 'Data Format': 'dataformat.md'
+  - 'Bootstrapping': 'bootstrapping.md'
+  - 'Monitoring': 'monitoring.md'
+  - 'Compat / Caveats': 'compat.md'
+  - 'Changelog': 'changelog.md'
